@@ -1,0 +1,70 @@
+.image-container {
+    height:100vh; /* Viewport height minus navbar and footer heights */
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 70px - 48px); 
+    
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.heading{
+    color: rgb(141, 141, 141);
+    position: relative;
+    font-size:4vw ;
+    -webkit-text-stroke: 0.2vw #30354b;
+    padding-bottom: 0.2em; /* Extra space for descenders */
+    overflow: visible; /* Lets the "g" tail show */
+    
+}
+
+.heading::before{
+    content:attr(data-text);
+    position: absolute;
+    top: 0;
+    left:0;
+    width:0;
+    height: 100%;
+    color: rgb(7, 209, 0);
+    -webkit-text-stroke: 0vw rgb(141, 141, 141) ;
+    border-right: 2px solid rgb(7, 209, 0);
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+    
+}
+@keyframes animate {
+  0%, 10% {
+    clip-path: inset(0 100% 0 0);
+  }
+  70%, 100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,95%
+    {
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.welcome{
+    text-size-adjust: bold;
+    color:rgb(0, 255, 0);     
+}
